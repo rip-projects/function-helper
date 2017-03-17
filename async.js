@@ -25,6 +25,10 @@ class Async {
     return requestAnimationFrame(callback);
   }
 
+  static sleep (wait) {
+    return new Promise(resolve => setTimeout(resolve, wait));
+  }
+
   static run (callback, wait) {
     return (new Async()).start(callback, wait);
   }
